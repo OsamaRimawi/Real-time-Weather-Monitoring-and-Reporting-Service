@@ -1,4 +1,4 @@
-using WeatherMonitoringService.WeatherData;
+using WeatherMonitoringService.WeatherDataModels;
 
 namespace WeatherMonitoringService.WeatherBots;
 
@@ -10,6 +10,10 @@ public class RainBot : IWeatherHumidityBot
     
     public void ProcessWeatherData(IWeatherData weatherData)
     {
-        throw new NotImplementedException();
+        if (weatherData.Temperature > HumidityThreshold)
+        {
+            Console.WriteLine("RainBot activated!");
+            Console.WriteLine("RainBot: " + Message);
+        }    
     }
 }

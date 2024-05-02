@@ -1,4 +1,4 @@
-using WeatherMonitoringService.WeatherData;
+using WeatherMonitoringService.WeatherDataModels;
 
 namespace WeatherMonitoringService.WeatherBots;
 
@@ -10,6 +10,10 @@ public class SunBot : IWeatherTemperatureBot
     
     public void ProcessWeatherData(IWeatherData weatherData)
     {
-        throw new NotImplementedException();
+        if (weatherData.Temperature > TemperatureThreshold)
+        {
+            Console.WriteLine("SunBot activated!");
+            Console.WriteLine("SunBot: " + Message);
+        }
     }
 }

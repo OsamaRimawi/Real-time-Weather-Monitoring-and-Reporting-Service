@@ -1,4 +1,4 @@
-using WeatherMonitoringService.WeatherData;
+using WeatherMonitoringService.WeatherDataModels;
 
 namespace WeatherMonitoringService.WeatherBots;
 
