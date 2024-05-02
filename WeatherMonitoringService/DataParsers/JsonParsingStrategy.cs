@@ -7,6 +7,6 @@ public class JsonParsingStrategy : IDataParsingStrategy
 {
     public WeatherData Parse(string data)
     {
-        return JsonConvert.DeserializeObject<WeatherData>(data);
+        return JsonConvert.DeserializeObject<WeatherData>(data)!;
     }
 }
