@@ -1,0 +1,5 @@
+<WeatherData>
+    <Location>City Name</Location>
+    <Temperature>-20</Temperature>
+    <Humidity>30.0</Humidity>
+</WeatherData>

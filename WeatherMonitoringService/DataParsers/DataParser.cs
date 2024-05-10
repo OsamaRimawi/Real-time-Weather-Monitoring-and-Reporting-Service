@@ -1,0 +1,18 @@
+using WeatherMonitoringService.WeatherDataModels;
+
+namespace WeatherMonitoringService.DataParsers;
+
+public class DataParser
+{
+    private readonly IDataParsingStrategy _strategy;
+
+    public DataParser(IDataParsingStrategy strategy)
+    {
+        _strategy = strategy;
+    }
+
+    public WeatherData Parse(string data)
+    {
+        return _strategy.Parse(data);
+    }
+}
