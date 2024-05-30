@@ -2,12 +2,12 @@
 
 namespace WeatherMonitoringServiceTests.WeatherBotsTests;
 
-public abstract class ConsoleOutputFixture : IDisposable
+public class ConsoleOutputFixture : IDisposable
 {
     private readonly StringWriter _stringWriter;
     private readonly TextWriter _originalOutput;
 
-    protected ConsoleOutputFixture()
+    public ConsoleOutputFixture()
     {
         _stringWriter = new StringWriter();
         _originalOutput = Console.Out;
