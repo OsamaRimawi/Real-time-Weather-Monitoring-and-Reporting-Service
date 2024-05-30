@@ -39,6 +39,9 @@ jobs:
         with:
           dotnet-version: '5.0.x'
 
+      - name: List directory contents
+        run: ls -laR
+
       - name: Restore dependencies
         run: dotnet restore WeatherMonitoringServiceTests/WeatherMonitoringServiceTests.csproj
         working-directory: WeatherMonitoringServiceTests
