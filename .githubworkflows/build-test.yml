@@ -1,0 +1,37 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - DEV
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: |
+          dotnet build WeatherMonitoringService/WeatherMonitoringService.sln
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Test project
+        run: |
+          dotnet test WeatherMonitoringServiceTests/WeatherMonitoringServiceTests.csproj
