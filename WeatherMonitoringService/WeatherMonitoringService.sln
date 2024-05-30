@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherMonitoringService", "WeatherMonitoringService.csproj", "{2904CB63-9AAE-44F9-B30A-F2B800C56DFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherMonitoringServiceTests", "..\WeatherMonitoringServiceTests\WeatherMonitoringServiceTests.csproj", "{04BBC8AE-79A2-457B-8435-B2F5FB866BFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{2904CB63-9AAE-44F9-B30A-F2B800C56DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2904CB63-9AAE-44F9-B30A-F2B800C56DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2904CB63-9AAE-44F9-B30A-F2B800C56DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04BBC8AE-79A2-457B-8435-B2F5FB866BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04BBC8AE-79A2-457B-8435-B2F5FB866BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04BBC8AE-79A2-457B-8435-B2F5FB866BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04BBC8AE-79A2-457B-8435-B2F5FB866BFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

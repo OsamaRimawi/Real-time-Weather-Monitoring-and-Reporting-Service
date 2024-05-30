@@ -7,8 +7,13 @@ public class ConfigurationService
 {
     public static List<IWeatherBot> GetBotsFromFile()
     {
-        var json = ReadFileFromUserInput();
-        var weatherBotsConfigs = JsonConvert.DeserializeObject<Dictionary<string, BotConfigs>>(json);
+        var fileData = ReadFileFromUserInput();
+        return ConvertStringToBots(fileData);
+    }
+
+    public static List<IWeatherBot> ConvertStringToBots(string fileData)
+    {
+        var weatherBotsConfigs = JsonConvert.DeserializeObject<Dictionary<string, BotConfigs>>(fileData);
 
         if (weatherBotsConfigs == null) return null!;
 
