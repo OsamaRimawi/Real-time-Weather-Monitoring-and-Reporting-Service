@@ -39,11 +39,6 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore WeatherMonitoringServiceTests/WeatherMonitoringServiceTests.csproj
-        working-directory: WeatherMonitoringServiceTests
-
       - name: Test project
         run: |
           dotnet test WeatherMonitoringServiceTests/WeatherMonitoringServiceTests.csproj
-        working-directory: WeatherMonitoringServiceTests
