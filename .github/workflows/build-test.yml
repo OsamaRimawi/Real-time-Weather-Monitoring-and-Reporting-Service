@@ -1,0 +1,52 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - DEV
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build project
+        run: |
+          dotnet build WeatherMonitoringService/WeatherMonitoringService.sln
+
+  test:
+    name: Test
+    runs-on: windows-latest
+
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: List directory contents
+        run: ls -laR
+
+      - name: Restore dependencies
+        run: dotnet restore WeatherMonitoringServiceTests/WeatherMonitoringServiceTests.csproj
+        working-directory: WeatherMonitoringServiceTests
+
+      - name: Test project
+        run: |
+          dotnet test WeatherMonitoringServiceTests/WeatherMonitoringServiceTests.csproj
+        working-directory: WeatherMonitoringServiceTests
